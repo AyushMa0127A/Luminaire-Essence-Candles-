@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luminaire Essence</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="header-left">
+<img src="logo.png" class="logo">
+<h1 class="site-title">Luminaire Essence</h1>
+</div>
+
+<div class="header-right">
+<button class="icon-btn" onclick="showSection('cart')">
+🛒 <span id="cart-count">0</span>
+</button>
+</div>
+</header>
+
+<main>
+
+<input type="text" id="search-bar" placeholder="Search shapes..." onkeyup="applySearch()">
+
+<!-- HOME -->
+<section id="home-section">
+<div id="products">
+
+<div class="product-card" onclick="openCustomizer('Angel')">
+<img src="angel.jpg"><h3>Angel Candle</h3>
+</div>
+
+<div class="product-card" onclick="openCustomizer('Owl')">
+<img src="Owl.jpg"><h3>Owl Candle</h3>
+</div>
+
+<div class="product-card" onclick="openCustomizer('Tulip')">
+<img src="Tulip.jpg"><h3>Tulip Candle</h3>
+</div>
+
+<div class="product-card" onclick="openCustomizer('Buddha')">
+<img src="buddha.jpg"><h3>Buddha Candle</h3>
+</div>
+
+<div class="product-card" onclick="openCustomizer('Rose')">
+<img src="rose.jpg"><h3>Rose Candle</h3>
+</div>
+
+<div class="product-card" onclick="openCustomizer('Rose Heart')">
+<img src="roseheart.jpg"><h3>Rose Heart Candle</h3>
+</div>
+
+<div class="product-card" onclick="openCustomizer('Double Rose')">
+<img src="doublerose.jpg"><h3>Double Rose Candle</h3>
+</div>
+
+<div class="product-card" onclick="openCustomizer('Heart')">
+<img src="Heart.jpg"><h3>Heart Candle</h3>
+</div>
+
+<div class="product-card" onclick="openCustomizer('Daisy')">
+<img src="daisy.jpg"><h3>Daisy Candle</h3>
+</div>
+
+</div>
+</section>
+
+<!-- CUSTOMIZER -->
+<section id="custom-section" class="section-card" style="display:none;">
+<h2 id="selected-shape"></h2>
+
+<h3>Choose Colour</h3>
+<div>
+<button onclick="selectColour('Red')">Red</button>
+<button onclick="selectColour('Blue')">Blue</button>
+<button onclick="selectColour('Yellow')">Yellow</button>
+<button onclick="selectColour('White')">White</button>
+<button onclick="selectColour('Purple')">Purple</button>
+<button onclick="selectColour('Orange')">Orange</button>
+</div>
+
+<h3>Choose Scent</h3>
+<div>
+<button onclick="selectScent('Jasmine')">Jasmine</button>
+<button onclick="selectScent('Coffee')">Coffee</button>
+<button onclick="selectScent('Vanilla')">Vanilla</button>
+<button onclick="selectScent('Rose')">Rose</button>
+<button onclick="selectScent('Lavender')">Lavender</button>
+</div>
+
+<br>
+<button class="btn" onclick="addCustomToCart()">Add to Cart</button>
+<button class="btn" onclick="showSection('home')">Back</button>
+</section>
+
+<!-- CART -->
+<section id="cart-section" class="section-card" style="display:none;">
+<h2>Cart</h2>
+<div id="cart-items"></div>
+<h3>Total ₹<span id="total">0</span></h3>
+
+<button class="btn" onclick="showSection('checkout')">Proceed to Checkout</button>
+<button class="btn" onclick="showSection('home')">Back</button>
+</section>
+
+<!-- CHECKOUT -->
+<section id="checkout-section" class="section-card" style="display:none;">
+<h2>Checkout</h2>
+
+<input type="text" id="cust-name" placeholder="Full Name">
+<br><br>
+
+<textarea id="cust-address" placeholder="Full Address"></textarea>
+<br><br>
+
+<input type="text" id="cust-phone" placeholder="Phone Number">
+<br><br>
+
+<p style="color:red; font-weight:bold;">
+⚠️ After clicking "Place Order", WhatsApp will open with your order receipt.  
+You MUST send that message and complete payment there.
+
+Wrong details = order cancellation.  
+No refund if already dispatched.
+</p>
+
+<br>
+
+<button class="btn" onclick="placeOrder()">Place Order via WhatsApp</button>
+<button class="btn" onclick="showSection('cart')">Back</button>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
